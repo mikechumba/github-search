@@ -1,8 +1,8 @@
-# Quotes
+# Github Search
 
 ###### Authored by Michael Kipchumba
 
-[Link to live site](https://mikechumba.github.io/pigdice/)
+[Link to live site](https://mikechumba.github.io/github-search/)
 
 A web app that allows people to search for Github profiles and repositories using github usernames.
 
@@ -23,11 +23,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - CSS3/SCSS
 -  Vanilla Javascript
 - Angular
+- Github API
 
 
 ###### Other
 
 - Fonts (Nunito Sans) from [Google Fonts](fonts.google.com).
+
 
 ### Setting Up
 
@@ -50,7 +52,7 @@ The web app doesn't seem to have any bugs this far. If you happen to come across
 
 MIT License
 
-Copyright (c) 2019 Michael Kipchumba
+Copyright (c) 2019 Michael Kipchumba.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -69,3 +71,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+The Github Logo is a property of Github.com and Github Inc. It can therefore not be reproduced for any commercial or personal use.
