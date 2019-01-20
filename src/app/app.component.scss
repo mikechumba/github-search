@@ -1,0 +1,43 @@
+$main-font: 'Nunito Sans', sans-serif;
+
+nav {
+   height: 40px;
+   width: 96%;
+   margin: 1.5% 2%;
+
+   img, p, div {
+      display: inline-block;
+   }
+
+   img {
+      width: 30px;
+   }
+}
+
+.logo {
+   height: 40px;
+   box-sizing: border-box;
+   cursor: pointer;
+
+   p {
+      padding: 8px 0;
+      font-family: $main-font;
+      font-weight: 600;
+      color: #E48C7D;
+      padding: 2px 8px;
+   }
+}
+
+.ham {
+   height: 48px;
+   align-items: flex-start;
+
+   i {
+      padding: 8px 0;
+      cursor: pointer;
+      &:hover {
+         font-size:26px;
+         color: #E48C7D;
+      }
+   }
+}
