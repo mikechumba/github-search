@@ -4,14 +4,14 @@ form {
 
 input {
    border: none;
-   border-bottom: 2px solid #C46D5E;
+   border-bottom: 1.5px solid #C46D5E;
    background: transparent;
    font-size: 20px;
    padding: 4px 12px;
-   font-weight: 400;
-   &:before {
+   font-weight: 300;
+   &::before {
       font-family: 'Material Icons';
-      content: 'search';
+      content: ' search';
       font-size: 20px;
    }
 }
@@ -23,12 +23,19 @@ input {
       display: inline-block;
       margin-right: 2%;
       cursor: pointer;
+      color: #C46D5E;
+
       &:hover::after {
          content: '';
-         position: absolute;
-         top: 2%;
+         display: block;
+         margin-top: 3px;
+         width: 80%;
          border: 1px solid #C46D5E;
          color: #C46D5E;
+      }
+
+      &:hover {
+         font-size: 17px;
       }
    }
 }
