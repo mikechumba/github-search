@@ -13,14 +13,11 @@ export class GithubService {
 
   apiKey: string = environment.apiKey;
   constructor(private http: HttpClient) {
-    this.user = new User ();
-    this.repo = new Repo ();
-    console.log('Service Works!');
-   }
+  }
 
-  getUser() {
+  getUser(userName) {
       const promise = new Promise((resolve, reject) => {
-        this.http.get<User>(`https://api.github.com/users/${this.user.name}?${this.apiKey}` )
+        this.http.get<User>(`https://api.github.com/users/${userName}?${this.apiKey}` )
         .toPromise()
         .then(res => {
           this.user.login = res.login;
@@ -36,9 +33,9 @@ export class GithubService {
     return promise;
   }
 
-  getRepos() {
+  getRepos(userName) {
     const promise = new Promise((resolve, reject) => {
-      this.http.get<Repo>(`https://api.github.com/users/${this.user.name}?access_token=${this.apiKey}` )
+      this.http.get<Repo>(`https://api.github.com/users/${userName}/repos?access_token=${this.apiKey}` )
         .toPromise()
         .then(res => {
           this.repo.name = res.name;

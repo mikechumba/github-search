@@ -10,10 +10,16 @@ import { GithubService } from '../github.service';
 })
 export class UsersComponent implements OnInit {
 
-  users: User;
-  constructor(user: GithubService) { 
-    this.users = new User()
-  }
+  // user: User;
+  // userName: string;
+  // constructor(private github: GithubService) {
+  //   this.userName = 'mikechumba';
+  // }
+
+  // getProfile() {
+  //   this.github.getUser(this.userName);
+  //   this.github.getRepos(this.userName);
+  // }
 
   ngOnInit() {
   }

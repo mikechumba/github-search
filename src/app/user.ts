@@ -1,9 +1,10 @@
 export class User {
-   login: string;
-   avatar_url: string;
-   html_url: string;
-   name: string;
-   public_repos: number;
-   followers: number;
-   following: number;
+   constructor (
+      public login: string,
+      public avatar_url: string,
+      public html_url: string,
+      public name: string,
+      public public_repos: number,
+      public followers: number,
+      public following: number) {}
 }

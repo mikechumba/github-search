@@ -1,3 +1,9 @@
-<form action="">
-  <input type="text" placeholder="Enter Username">
+<div class="search-class">
+  <p>Users</p>
+  <p>Repos</p>
+</div>
+
+<form (keyup)="getProfile()">
+  <input type="text" placeholder="Enter Username" [(ngModel)]="userName" name="userName">
 </form>
+
