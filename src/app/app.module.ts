@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
 import { UsersComponent } from './users/users.component';
+import { GithubService } from './github.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { UsersComponent } from './users/users.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [GithubService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
