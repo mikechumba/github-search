@@ -14,21 +14,21 @@ export class UsersComponent implements OnInit {
 
   user: User;
   repo: Repo;
-  userName: string;
+  username: string;
   constructor(private github: GithubService) {
-    this.github.getUsername(this.userName);
-
-   this.github.getUser();
-   this.user = this.github.user;
-  console.log(this.user);
-
-   this.github.getRepos(this.userName);
-   this.repo = this.github.repo;
-    console.log(this.user);
   }
 
-  // getProfile() {
-  // }
+  getProfile() {
+    this.github.getUsername(this.username);
+
+    this.github.getUser();
+    this.user = this.github.user;
+    console.log(this.user);
+
+    this.github.getRepos(this.username);
+    this.repo = this.github.repo;
+    console.log(this.user);
+  }
 
   switchSearch() {
     this.searchUsers = !this.searchUsers;
@@ -36,6 +36,12 @@ export class UsersComponent implements OnInit {
 
 
   ngOnInit() {
+    this.github.getUser();
+   this.user = this.github.user;
+  console.log(this.user);
+
+   this.github.getRepos(this.username);
+   this.repo = this.github.repo;
   }
 
 }

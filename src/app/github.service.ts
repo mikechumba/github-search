@@ -31,7 +31,7 @@ export class GithubService {
       following: number;
     }
     const promise = new Promise(((resolve, reject) => {
-      this.http.get<ApiResponse>('https://api.github.com/users/' + this.userName + '?access_token=' + this.apiKey)
+      this.http.get<ApiResponse>('https://api.github.com/users/' + this.userName + '?access_token=' + this.apiKey )
       .toPromise()
       .then(res => {
           this.user.login = res.login;
@@ -41,7 +41,6 @@ export class GithubService {
           this.user.followers = res.followers;
           this.user.following = res.following;
           this.user.public_repos = res.public_repos;
-          console.log(this.user);
         },
         error => {
 
@@ -53,7 +52,7 @@ export class GithubService {
 
   getRepos(username) {
     const promise = new Promise(((resolve, reject) => {
-      this.http.get<Repo>(`https://api.github.com/users/${this.userName}/repos?access_token=${this.apiKey}` )
+      this.http.get<Repo>('https://api.github.com/users/' + username + '/repos?access_token=' + this.apiKey )
         .toPromise()
         .then(res => {
           this.repo.name = res.name;

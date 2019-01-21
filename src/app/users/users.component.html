@@ -1,10 +1,10 @@
 <div class="search-class">
-  <p>Users</p>
-  <p>Repos</p>
+  <p id='users'>Users</p>
+  <p id='repos'>Repos</p>
 </div>
 
-<form (keyup)="getProfile()">
-  <input type="text" placeholder="Enter Username" [(ngModel)]="userName" name="userName">
+<form>
+  <input type="text" placeholder="Enter Username" [(ngModel)]="username" name="username" (keyup)="getProfile()">
 </form>
 
 <div class="main-card">
