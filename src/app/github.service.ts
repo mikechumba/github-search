@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class GithubService {
   user: User;
   repo: Repo;
-  userName: string;
+  private userName: string;
 
   apiKey: string = environment.apiKey;
   baserUrl: string = environment.baseUrl;
@@ -20,10 +20,20 @@ export class GithubService {
   }
 
   getUser() {
-      const promise = new Promise(((resolve, reject) => {
-        this.http.get<User>(`https://api.github.com/users/mikechumba?access_token=${this.apiKey}` )
-        .toPromise()
-        .then(res => {
+
+    interface ApiResponse {
+      login: string;
+      avatar_url: string;
+      html_url: string;
+      name: string;
+      public_repos: number;
+      followers: number;
+      following: number;
+    }
+    const promise = new Promise(((resolve, reject) => {
+      this.http.get<ApiResponse>('https://api.github.com/users/' + this.userName + '?access_token=' + this.apiKey)
+      .toPromise()
+      .then(res => {
           this.user.login = res.login;
           this.user.avatar_url = res.avatar_url;
           this.user.html_url = res.html_url;
