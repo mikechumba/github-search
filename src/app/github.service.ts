@@ -10,14 +10,16 @@ import { HttpClient } from '@angular/common/http';
 export class GithubService {
   user: User;
   repo: Repo;
+  userName: string;
 
   apiKey: string = environment.apiKey;
   constructor(private http: HttpClient) {
+    this.userName = 'mikechumba';
   }
 
-  getUser(userName) {
-      const promise = new Promise((resolve, reject) => {
-        this.http.get<User>(`https://api.github.com/users/${userName}?${this.apiKey}` )
+  getUser() {
+      const promise = new Promise(((resolve, reject) => {
+        this.http.get<User>(`https://api.github.com/users/${this.userName}?${this.apiKey}` )
         .toPromise()
         .then(res => {
           this.user.login = res.login;
@@ -27,24 +29,32 @@ export class GithubService {
           this.user.followers = res.followers;
           this.user.following = res.following;
           console.log(this.user);
-          }
-        );
+        },
+        error => {
+
+      reject(error);
     });
+    }));
     return promise;
   }
 
-  getRepos(userName) {
-    const promise = new Promise((resolve, reject) => {
-      this.http.get<Repo>(`https://api.github.com/users/${userName}/repos?access_token=${this.apiKey}` )
+  getRepos() {
+    const promise = new Promise(((resolve, reject) => {
+      this.http.get<Repo>(`https://api.github.com/users/${this.userName}/repos?access_token=${this.apiKey}` )
         .toPromise()
         .then(res => {
           this.repo.name = res.name;
           this.repo.repo_url = res.repo_url;
           this.repo.description = res.description;
-          console.log(this.user);
-          }
-        );
+    }, error => {
+
+      reject(error);
     });
+  }));
     return promise;
+  }
+
+  getUsername(username: string) {
+    this.userName = username;
   }
 }

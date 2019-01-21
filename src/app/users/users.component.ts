@@ -15,15 +15,18 @@ export class UsersComponent implements OnInit {
   user: User;
   userName: string;
   constructor(private github: GithubService) {
+    this.github.getUsername(this.userName);
+    console.log(this.user);
   }
 
-  getProfile() {
-    this.userName = 'Michael Kipchumba';
-  }
+  // getProfile() {
+    
+  // }
 
   switchSearch() {
     this.searchUsers = !this.searchUsers;
   }
+
 
   ngOnInit() {
   }
