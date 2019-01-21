@@ -39,3 +39,56 @@ input {
       }
    }
 }
+
+.avi-panel {
+   width: 35%;
+
+   img {
+      width: 100%; 
+      background-color: #DAA588;
+      margin: 0;
+   }
+   button {
+      width: 100%;
+      height: 21%;
+      background: #F3C98B;
+      border: none; 
+      color: #707070;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 6px 16px;
+      &:after {
+         font-family: 'Material Icons';
+         content: ' arrow_forward';
+         font-size: 16px;
+      }
+   }
+}
+
+.details {
+   width: 60%;
+   margin: 0 1%;
+
+   p {
+      display: inline-block;
+      margin: 8px;
+      font-size: 13px;
+      text-align: center;
+
+      span {
+         @include fonts(20px, #333, 500);
+      }
+      &:after {
+         content: " ";
+         display: block;
+         position: absolute;
+         height: 5px;
+         background: black;
+         width: 2
+      }
+   }
+   h3 {
+      margin-top: 20%;
+   }
+
+}

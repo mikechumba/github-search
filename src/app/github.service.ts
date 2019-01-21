@@ -13,13 +13,15 @@ export class GithubService {
   userName: string;
 
   apiKey: string = environment.apiKey;
+  baserUrl: string = environment.baseUrl;
   constructor(private http: HttpClient) {
-    this.userName = 'mikechumba';
+    this.user = new User ('', '', '', '', 0, 0, 0);
+    this.userName = 'madskillz254';
   }
 
   getUser() {
       const promise = new Promise(((resolve, reject) => {
-        this.http.get<User>(`https://api.github.com/users/${this.userName}?${this.apiKey}` )
+        this.http.get<User>(`https://api.github.com/users/mikechumba?access_token=${this.apiKey}` )
         .toPromise()
         .then(res => {
           this.user.login = res.login;
@@ -28,6 +30,7 @@ export class GithubService {
           this.user.name = res.name;
           this.user.followers = res.followers;
           this.user.following = res.following;
+          this.user.public_repos = res.public_repos;
           console.log(this.user);
         },
         error => {
@@ -38,7 +41,7 @@ export class GithubService {
     return promise;
   }
 
-  getRepos() {
+  getRepos(username) {
     const promise = new Promise(((resolve, reject) => {
       this.http.get<Repo>(`https://api.github.com/users/${this.userName}/repos?access_token=${this.apiKey}` )
         .toPromise()

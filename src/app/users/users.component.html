@@ -3,4 +3,22 @@
   <p>Repos</p>
 </div>
 
+<form (keyup)="getProfile()">
+  <input type="text" placeholder="Enter Username" [(ngModel)]="userName" name="userName">
+</form>
+
+<div class="main-card">
+  <div class="avi-panel to-left">
+    <img src="{{user.avatar_url}}" alt="avatar">
+    <a href="{{user.html_url}}"><button>Go to Profile </button></a>
+  </div>
+  <div class="details to-right">
+      <h3>{{user.name}}</h3>
+      <p>Followers<br><span>{{user.followers}}</span></p>
+      <p>Following<br><span>{{user.following}}</span></p>
+      <p>Repositories<br><span>{{user.public_repos}}</span></p>
+  </div>
+  
+</div>
+
 
