@@ -1,9 +1,12 @@
 <div class="search-class">
-  <p >Users</p>
+  <p *ngIf="switchSearch? #users">Users</p>
   <p>Repos</p>
 </div>
 
-<form (keyup)="getProfile()">
-  <input type="text" placeholder="Enter Username" [(ngModel)]="userName" name="userName">
-</form>
+<ng-template #users>
+  <form (keyup)="getProfile()">
+    <input type="text" placeholder="Enter Username" [(ngModel)]="userName" name="userName">
+  </form>
+</ng-template>
+
 
