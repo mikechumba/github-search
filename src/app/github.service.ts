@@ -16,7 +16,7 @@ export class GithubService {
   baserUrl: string = environment.baseUrl;
   constructor(private http: HttpClient) {
     this.user = new User ('', '', '', '', 0, 0, 0);
-    this.userName = 'madskillz254';
+    this.userName = 'mikechumba';
   }
 
   getUser() {
