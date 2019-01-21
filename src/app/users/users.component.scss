@@ -8,7 +8,7 @@ form {
    margin: 0 2%;
 }
 
-input {
+input[type="text"] {
    border: none;
    border-bottom: 1.5px solid #C46D5E;
    background: transparent;
@@ -20,6 +20,12 @@ input {
       font-family: 'Material Icons';
       content: ' search';
       font-size: 20px;
+   }
+   &:focus {
+      border: none;
+      border-bottom: 1.5px solid #C46D5E;
+      opacity: 0.7;
+      color: #664C43;
    }
 }
 
@@ -119,4 +125,18 @@ input {
       }
    }
 
+}
+
+.repo-row {
+   display: grid;
+   grid-template-columns: repeat(3, auto);
+   grid-gap: 10px;
+   grid-auto-flow: row;
+}
+ 
+.column {
+   display: flex;
+   flex-direction: column;
+   flex-basis: 100%;
+   flex: 1;
 }

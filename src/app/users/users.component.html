@@ -1,6 +1,6 @@
 <div class="search-class">
-  <p id='users'>Users</p>
-  <p id='repos'>Repos</p>
+  <p id='users' (click)="searchUsers = true">Users</p>
+  <p id='repos' (click)="searchUsers = false">Repos</p>
 </div>
 
 <form>
@@ -22,7 +22,10 @@
 </div>
 
 <div *ngIf="!searchUsers">
-  p
+  <div *ngFor="let repo of repo" class="repo-row">
+    <h3>{{repo.name}}</h3>
+    <p>{{repo.description}}</p>
+  </div>
 </div>
 
 
