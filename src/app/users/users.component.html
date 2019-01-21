@@ -22,9 +22,14 @@
 </div>
 
 <div *ngIf="!searchUsers">
-  <div *ngFor="let repo of repo" class="repo-row">
-    <h3>{{repo.name}}</h3>
-    <p>{{repo.description}}</p>
+  <div class="repo-row">
+     <li *ngFor="let rep of repo">
+       <a href="{{rep.repo_url}}">
+          <h3>{{rep.name}}</h3>
+          <p>{{rep.description}}</p>
+       </a>
+        
+    </li>  
   </div>
 </div>
 

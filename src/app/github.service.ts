@@ -51,8 +51,15 @@ export class GithubService {
   }
 
   getRepos(username) {
+
+    interface ApiResponse {
+      name: string;
+      repo_url: string;
+      description: string;
+    }
+
     const promise = new Promise(((resolve, reject) => {
-      this.http.get<Repo>('https://api.github.com/users/' + username + '/repos?access_token=' + this.apiKey )
+      this.http.get<ApiResponse>('https://api.github.com/users/' + username + '/repos?access_token=' + this.apiKey )
         .toPromise()
         .then(res => {
           this.repo.name = res.name;
