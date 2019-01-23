@@ -61,6 +61,14 @@ input[type="text"] {
 
 .main-card {
    font-family: 'Nunito Sans', sans-serif;
+   width: 48%;
+   height: 43vh;
+   margin: 6% 2%;
+   box-shadow: 1px 1px 6px 5px rgba(#333, 0.1);
+}
+
+.some-card {
+   font-family: 'Nunito Sans', sans-serif;
    width: 380px;
    height: 100%;
    margin: 6% 2%;

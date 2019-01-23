@@ -55,7 +55,7 @@ export class GithubService {
 
     interface ApiResponse {
       name: string;
-      repo_url: string;
+      html_url: string;
       description: string;
     }
 

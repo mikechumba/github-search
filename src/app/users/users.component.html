@@ -7,10 +7,10 @@
   <input type="text" placeholder="Enter Username" [(ngModel)]="username" name="username" (keyup)="getProfile()">
 </form>
 
-<div *ngIf="!searchUsers" class="main-card">
+<div *ngIf="searchUsers" class="main-card">
   <div class="avi-panel to-left">
     <img src="{{user.avatar_url}}" alt="avatar">
-    <a href="{{user.html_url}}"><button>Go to Profile </button></a>
+    <a href="{{user.html_url}}" target="_blank"><button>Go to Profile </button></a>
   </div>
   <div class="details to-right">
       <h3>{{user.name}}</h3>
@@ -21,10 +21,10 @@
   
 </div>
 
-<div *ngIf="searchUsers">
+<div *ngIf="!searchUsers">
   <div class="container repo-row">
-    <div *ngFor="let rep of repo" class="main-card">
-      <a href="{{rep.repo_url}}" >
+    <div *ngFor="let rep of repo" class="some-card">
+      <a href="{{rep.html_url}}" target="_blank">
           <h3>{{rep.name}}</h3>
           <p>{{rep.description}}</p>
       </a>
