@@ -16,6 +16,7 @@ export class GithubService {
   baserUrl: string = environment.baseUrl;
   constructor(private http: HttpClient) {
     this.user = new User ('', '', '', '', 0, 0, 0);
+    this.repo = new Repo('', '', '');
     this.userName = 'mikechumba';
   }
 
@@ -59,12 +60,10 @@ export class GithubService {
     }
 
     const promise = new Promise(((resolve, reject) => {
-      this.http.get<ApiResponse>('https://api.github.com/users/' + username + '/repos?access_token=' + this.apiKey )
+      this.http.get<ApiResponse>('https://api.github.com/users/' + this.userName + '/repos?access_token=' + this.apiKey )
         .toPromise()
         .then(res => {
-          this.repo.name = res.name;
-          this.repo.repo_url = res.repo_url;
-          this.repo.description = res.description;
+          this.repo = res;
     }, error => {
 
       reject(error);

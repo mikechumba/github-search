@@ -37,7 +37,6 @@ export class UsersComponent implements OnInit {
   ngOnInit() {
     this.github.getUser();
     this.user = this.github.user;
-    console.log(this.user);
 
     this.github.getRepos(this.username);
     this.repo = this.github.repo;
